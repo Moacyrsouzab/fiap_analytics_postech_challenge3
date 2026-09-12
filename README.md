@@ -110,9 +110,7 @@ tech-challenge-3-state-of-data-aws/
 │
 ├── docs/
 │   ├── insights_principais.md             # os 7 achados, com números reais
-│   ├── mapeamento_schema.md               # de-para de colunas entre as 3 edições
-│   ├── cronograma_tech_challenge.md       # checklist e cronograma do desafio
-│   └── roteiro_video.md                   # roteiro do vídeo executivo
+│   └── mapeamento_schema.md               # de-para de colunas entre as 3 edições
 │
 ├── Material_Executivo_State_of_Data.pptx
 ├── Relatorio_Executivo_State_of_Data.docx
