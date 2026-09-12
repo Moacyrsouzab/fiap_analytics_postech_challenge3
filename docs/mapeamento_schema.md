@@ -37,11 +37,5 @@ Para o arquivo de 2023, extrair de cada cabeçalho `('CODIGO ', 'DESCRICAO')`:
 
 ⚠️ = confirma que a padronização **precisa ser feita por nome/tema da pergunta, não por código de posição** — o mesmo tema muda de número de ano pra ano.
 
-## O que ainda falta mapear
-
-Essa tabela cobre as colunas essenciais para as 7 perguntas do desafio. Cada pesquisa tem 388 a 403 colunas no total (muitas são sub-perguntas tipo checkbox — ex: cada tecnologia/ferramenta é uma coluna binária própria). Não é necessário nem recomendado mapear as 400 colunas uma a uma — o pipeline deve:
-1. Padronizar as colunas-chave acima (perfil, cargo, senioridade, salário, região, uso de IA) → essas viram a base da camada Silver
-2. Para os blocos de tecnologias/ferramentas (múltiplas colunas binárias por pergunta), manter o prefixo comum (`4.d.*`, `4.g.*` etc.) e tratar como grupo, sem precisar renomear individualmente cada tecnologia
-
 ---
 *Mapeamento gerado a partir da inspeção real dos 3 arquivos enviados (colunas + datas de coleta).*
