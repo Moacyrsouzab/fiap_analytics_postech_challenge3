@@ -114,7 +114,6 @@ tech-challenge-3-state-of-data-aws/
 │
 ├── Material_Executivo_State_of_Data.pptx
 ├── Relatorio_Executivo_State_of_Data.docx
-├── Video_Apresentacao_Executiva.txt
 ├── requirements.txt
 └── README.md
 ```
