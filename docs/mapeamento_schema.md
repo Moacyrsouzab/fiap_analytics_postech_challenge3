@@ -37,5 +37,17 @@ Para o arquivo de 2023, extrair de cada cabeçalho `('CODIGO ', 'DESCRICAO')`:
 
 ⚠️ = confirma que a padronização **precisa ser feita por nome/tema da pergunta, não por código de posição** — o mesmo tema muda de número de ano pra ano.
 
+## O que ainda falta mapear
+
+Essa tabela cobre as colunas essenciais para as 7 perguntas do desafio. Cada pesquisa tem 388 a 403 colunas no total (muitas são sub-perguntas tipo checkbox — ex: cada tecnologia/ferramenta é uma coluna binária própria). Não é necessário nem recomendado mapear as 400 colunas uma a uma — o pipeline deve:
+1. Padronizar as colunas-chave acima (perfil, cargo, senioridade, salário, região, uso de IA) → essas viram a base da camada Silver
+2. Para os blocos de tecnologias/ferramentas (múltiplas colunas binárias por pergunta), manter o prefixo comum (`4.d.*`, `4.g.*` etc.) e tratar como grupo, sem precisar renomear individualmente cada tecnologia
+
+## Aprendizados da execução real no AWS (pós-implementação)
+
+Depois de rodar o pipeline de ponta a ponta no AWS Academy Lab, dois pontos que não eram óbvios na fase de mapeamento local:
+
+1. **O filtro de qualidade `dropna(how='all', subset=['cargo_atual','senioridade','faixa_salarial'])`, usado no Glue Job para limpar linhas totalmente vazias, tem um efeito colateral nas tabelas puramente demográficas.** Ele remove ~10% dos respondentes por ano (gente que não preencheu nenhuma das 3 perguntas profissionais) — o que é correto para as tabelas de cargo/senioridade/salário, mas reduz sem necessidade a base usada em `genero_por_ano`, `distribuicao_regiao` e `modelo_trabalho_por_ano`, que deveriam considerar todo mundo que respondeu a pergunta demográfica em si, independente de ter respondido sobre emprego. Na prática, o efeito foi pequeno (~1 ponto percentual na maioria dos casos, mas mudou a leitura da tendência de gênero — ver `insights_principais.md`).
+
 ---
-*Mapeamento gerado a partir da inspeção real dos 3 arquivos enviados (colunas + datas de coleta).*
+*Mapeamento gerado a partir da inspeção real dos 3 arquivos enviados (colunas + datas de coleta), com aprendizados adicionados após a execução real no AWS.*
