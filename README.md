@@ -194,7 +194,7 @@ Como próximos passos, recomenda-se:
 * Diagrama de arquitetura da solução (Draw.io);
 * Notebook de análise exploratória e validação;
 * Material executivo com DataViz e Storytelling (PowerPoint);
-* Relatório executivo (Word).
+* Relatório executivo (PDF).
 
 ---
 
